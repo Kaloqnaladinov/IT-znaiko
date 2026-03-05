@@ -1,0 +1,714 @@
+/* ===== RESET & GLOBAL ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background: linear-gradient(135deg, #f9f9f9 0%, #e0e7ff 100%);
+}
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+
+/* ===== HEADER ===== */
+#main-header {
+    background: linear-gradient(135deg, #ea6666 0%, #764ba2 50%, #667eea 100%);
+    color: white;
+    text-align: center;
+    padding: 60px 0 30px;
+    border-bottom: 5px solid #f9ca24;
+}
+
+#main-header h1 {
+    font-size: 2.8rem;
+    margin-bottom: 10px;
+    text-shadow: 3px 3px 0 #2ecc71;
+    color: white;
+}
+
+.subtitle {
+    font-size: 1.3rem;
+    opacity: 0.9;
+    color: white;
+}
+
+/* ===== NAVIGATION ===== */
+#main-nav {
+    background: linear-gradient(135deg, #2c3e50, #34495e);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    transition: transform 0.3s ease;
+    border-bottom: 3px solid #f9ca24;
+}
+
+.nav-hidden {
+    transform: translateY(-100%);
+}
+
+#main-nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+#main-nav ul li a {
+    color: white;
+    text-decoration: none;
+    padding: 15px 20px;
+    display: inline-block;
+    transition: all 0.3s;
+    position: relative;
+}
+
+#main-nav ul li a:hover {
+    background: #ea6666;
+    transform: translateY(-3px);
+}
+
+#main-nav ul li a::after {
+    content: '';
+    position: absolute;
+    bottom: 5px;
+    left: 50%;
+    width: 0;
+    height: 3px;
+    background: #f9ca24;
+    transition: all 0.3s;
+    transform: translateX(-50%);
+}
+
+#main-nav ul li a:hover::after {
+    width: 50%;
+}
+
+/* ===== SECTIONS ===== */
+.section {
+    padding: 60px 0;
+    position: relative;
+    color: #333;
+}
+
+.section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 5px;
+    background: linear-gradient(90deg, #ea6666, #764ba2, #667eea, #2ecc71, #f9ca24);
+}
+
+.section h2 {
+    text-align: center;
+    margin-bottom: 40px;
+    color: #2c3e50;
+    font-size: 2.2rem;
+    text-shadow: 2px 2px 0 #ea6666;
+    position: relative;
+    display: inline-block;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.section h2::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: linear-gradient(90deg, #ea6666, #764ba2, #667eea, #2ecc71, #f9ca24);
+    border-radius: 2px;
+}
+
+.section p {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto 20px auto;
+    color: #1a1a1a;
+}
+
+.bg-light {
+    background: linear-gradient(135deg, #f8f9fa 0%, #e0e7ff 50%, #764ba2 100%);
+    color: #333;
+}
+
+.bg-light h2 {
+    color: white;
+}
+
+.bg-light p {
+    color: #1a1a1a;
+    background: rgba(255, 255, 255, 0.7);
+    padding: 15px;
+    border-radius: 10px;
+}
+
+/* ===== INTRO ===== */
+#intro {
+    text-align: center;
+    background: radial-gradient(circle at 10% 30%, #667eea20, transparent 50%);
+    color: #333;
+}
+
+.image-placeholder {
+    font-size: 6rem;
+    margin: 30px 0;
+}
+
+.image-placeholder img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+    border-radius: 30px;
+    box-shadow: 0 20px 40px rgba(234, 102, 102, 0.3);
+    transition: transform 0.3s;
+}
+
+.image-placeholder img:hover {
+    transform: scale(1.05) rotate(2deg);
+}
+
+/* ===== WHAT IS AI ===== */
+#what-is-ai {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #ea6666 100%);
+    padding: 60px 0;
+    color: #333;
+}
+
+#what-is-ai h2 {
+    color: white;
+    text-shadow: 3px 3px 0 #2ecc71;
+}
+
+#what-is-ai p {
+    color: #1a1a1a;
+    background: rgba(255, 255, 255, 0.8);
+    padding: 20px;
+    border-radius: 15px;
+}
+
+.ai-explanation {
+    max-width: 900px;
+    margin: 0 auto 30px;
+}
+
+.highlight-text {
+    font-size: 1.5rem;
+    background: linear-gradient(135deg, #ea6666 0%, #f9ca24 50%, #2ecc71 100%);
+    color: #ea6666 !important;
+    /* ← ЗЕЛЕНИ БУКВИ */
+    text-shadow:
+        -1px -1px 0 #000,
+        1px -1px 0 #000,
+        -1px 1px 0 #000,
+        1px 1px 0 #000 !important;
+    /* ← ЧЕРЕН КОНТУР */
+    padding: 25px;
+    border-radius: 20px;
+    margin-bottom: 25px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    border: 3px solid white;
+    transform: rotate(-0.5deg);
+    font-weight: bold;
+}
+
+.quote-box {
+    background: rgba(255, 255, 255, 0.95);
+    border-left: 10px solid #f9ca24;
+    border-right: 5px solid #ea6666;
+    padding: 20px;
+    margin: 25px 0;
+    border-radius: 20px;
+    font-style: italic;
+    color: #1a1a1a !important;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.simple-text {
+    font-size: 1.2rem;
+    margin: 20px 0;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 15px;
+    border: 2px dashed #f9ca24;
+    color: #1a1a1a !important;
+    backdrop-filter: blur(5px);
+}
+
+/* ===== FUN FACTS ===== */
+.fun-facts {
+    background: linear-gradient(135deg, #2ecc71 0%, #f9ca24 50%, #ea6666 100%);
+    border: 4px solid white;
+    margin-top: 30px;
+    border-radius: 30px;
+    transform: rotate(0.5deg);
+}
+
+.fun-facts h3 {
+    font-size: 2rem;
+    color: white !important;
+    text-shadow: 3px 3px 0 #2c3e50;
+    margin-bottom: 25px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.fun-list {
+    list-style: none;
+}
+
+.fun-list li {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 50px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    border: 2px solid #667eea;
+    color: #1a1a1a;
+}
+
+.fun-list li:hover {
+    transform: translateX(20px) scale(1.05);
+    background: white;
+    border-color: #ea6666;
+    box-shadow: 0 10px 30px rgba(234, 102, 102, 0.3);
+}
+
+.emoji-badge {
+    font-size: 2.5rem;
+    min-width: 60px;
+    text-align: center;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    border-radius: 50%;
+    padding: 10px;
+    color: white;
+}
+
+.funny-note {
+    background: linear-gradient(135deg, #f9ca24, #ea6666);
+    border: 3px solid white;
+    border-radius: 50px;
+    padding: 20px 30px;
+    margin-top: 30px;
+    font-size: 1.3rem;
+    color: #1a1a1a !important;
+    text-align: center;
+    animation: pulse 2s infinite;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+/* ===== HOW AI HELPS ===== */
+#how-ai-helps .card {
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    color: white;
+    border: 2px solid #f9ca24;
+}
+
+#how-ai-helps .card h3 {
+    color: #f9ca24 !important;
+    font-size: 1.5rem;
+}
+
+#how-ai-helps .card p {
+    color: white !important;
+    background: transparent;
+}
+
+/* ===== PROS & CONS ===== */
+.split {
+    display: flex;
+    gap: 30px;
+    margin-top: 30px;
+}
+
+.pros,
+.cons {
+    flex: 1;
+}
+
+.pros h3 {
+    color: #2ecc71;
+    border-bottom: 4px solid #2ecc71;
+    padding-bottom: 10px;
+    font-size: 1.8rem;
+}
+
+.cons h3 {
+    color: #ea6666;
+    border-bottom: 4px solid #ea6666;
+    padding-bottom: 10px;
+    font-size: 1.8rem;
+}
+
+.pros .card,
+.cons .card {
+    background: white;
+    border: 2px solid;
+}
+
+.pros .card {
+    border-color: #2ecc71;
+}
+
+.cons .card {
+    border-color: #ea6666;
+}
+
+.pros .card p,
+.cons .card p {
+    color: #1a1a1a;
+}
+
+/* ===== LEARN TEXT ===== */
+#learn-text {
+    text-align: center;
+    background: linear-gradient(135deg, #f9ca2420, #2ecc7120);
+    color: #333;
+}
+
+#learn-text .card {
+    max-width: 800px;
+    margin: 30px auto;
+    text-align: left;
+    background: white;
+    border: 3px solid;
+    border-image: linear-gradient(135deg, #ea6666, #667eea, #2ecc71) 1;
+}
+/* ===== ЦЕНТРИРАНЕ НА LEARN TEXT ===== */
+#learn-text {
+    text-align: center !important;
+}
+
+#learn-text h2,
+#learn-text h3 {
+    text-align: center !important;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+}
+
+#learn-text p {
+    text-align: center !important;
+    max-width: 800px;
+    margin-left: auto !important;
+    margin-right: auto !important;
+}
+
+#learn-text .card {
+    text-align: left !important;
+    max-width: 800px;
+    margin: 30px auto !important;
+}
+
+#learn-text .card h3 {
+    text-align: center !important;
+    margin-top: 0;
+}
+
+#learn-text .card ul {
+    display: inline-block;
+    text-align: left;
+}
+
+#learn-text .card p {
+    text-align: left !important;
+}
+
+/* ===== ЦЕНТРИРАНЕ ЗА ДРУГИ СЕКЦИИ ===== */
+#what-is-ai .fun-facts h3 {
+    text-align: center !important;
+}
+
+#what-is-ai .fun-facts ul {
+    text-align: left;
+    display: inline-block;
+    margin: 0 auto;
+}
+
+/* ===== GEMINI CHAT ===== */
+.gemini-container {
+    max-width: 800px;
+    margin: 0 auto;
+    background: white;
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    border: 3px solid #667eea;
+}
+
+.gemini-input-group {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+#gemini-question {
+    flex: 1;
+    padding: 15px;
+    border: 3px solid #2ecc71;
+    border-radius: 15px;
+    font-size: 1rem;
+    outline: none;
+    transition: all 0.3s;
+    color: #1a1a1a;
+}
+
+#gemini-question:focus {
+    border-color: #f9ca24;
+    box-shadow: 0 0 15px #2ecc71;
+    transform: scale(1.02);
+}
+
+#gemini-ask-btn {
+    background: linear-gradient(135deg, #ea6666, #667eea);
+    color: white;
+    border: none;
+    padding: 0 30px;
+    border-radius: 15px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: all 0.3s;
+    border: 2px solid #f9ca24;
+}
+
+#gemini-ask-btn:hover {
+    transform: scale(1.05) rotate(2deg);
+    background: linear-gradient(135deg, #667eea, #ea6666);
+    box-shadow: 0 5px 20px #ea6666;
+}
+
+/* ===== CHAT SPINNER ===== */
+.thinking {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 20px 0;
+    padding: 15px 25px;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    border-radius: 50px;
+    color: white;
+    font-size: 1.2rem;
+    border: 2px solid #f9ca24;
+    animation: glow 2s infinite;
+}
+
+@keyframes glow {
+
+    0%,
+    100% {
+        box-shadow: 0 0 10px #667eea;
+    }
+
+    50% {
+        box-shadow: 0 0 30px #ea6666;
+    }
+}
+
+.spinner {
+    width: 28px;
+    height: 28px;
+    border: 4px solid rgba(255, 255, 255, 0.3);
+    border-top: 4px solid #f9ca24;
+    border-right: 4px solid #2ecc71;
+    border-bottom: 4px solid #ea6666;
+    border-radius: 50%;
+    animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.answer-box {
+    background: white;
+    border-left: 6px solid #2ecc71;
+    border-right: 6px solid #ea6666;
+    padding: 20px;
+    border-radius: 15px;
+    min-height: 150px;
+    max-height: 600px;
+    overflow-y: auto;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    white-space: pre-wrap;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+    color: #1a1a1a;
+}
+
+/* ===== CARDS ===== */
+.card {
+    background: white;
+    border-radius: 15px;
+    padding: 25px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s;
+    border: 1px solid #ddd;
+    position: relative;
+    overflow: hidden;
+    color: #1a1a1a;
+}
+
+.card::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(45deg, transparent, rgba(102, 126, 234, 0.1), transparent);
+    transform: rotate(45deg);
+    transition: all 0.5s;
+}
+
+.card:hover {
+    transform: translateY(-10px) rotate(1deg);
+    box-shadow: 0 20px 40px rgba(102, 126, 234, 0.3);
+    border-color: #667eea;
+}
+
+.card:hover::before {
+    top: -30%;
+    left: -30%;
+}
+
+.card h3 {
+    color: #667eea;
+    margin-bottom: 15px;
+    font-size: 1.5rem;
+}
+
+.card p {
+    color: #1a1a1a;
+}
+
+/* ===== GRID ===== */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+    margin-top: 30px;
+}
+
+/* ===== FOOTER ===== */
+#main-footer {
+    background: linear-gradient(135deg, #2c3e50, #34495e);
+    color: white;
+    text-align: center;
+    padding: 40px 0;
+    border-top: 5px solid #f9ca24;
+    position: relative;
+    overflow: hidden;
+}
+
+#main-footer::after {
+    content: '🚀🤖💡';
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    font-size: 2rem;
+    opacity: 0.3;
+    transform: rotate(-10deg);
+}
+
+/* ===== SCROLL TO TOP ===== */
+#scrollTopBtn {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 55px;
+    height: 55px;
+    background: linear-gradient(135deg, #ea6666, #667eea);
+    color: white;
+    border: 3px solid #f9ca24;
+    border-radius: 50%;
+    font-size: 28px;
+    cursor: pointer;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s;
+    z-index: 999;
+    opacity: 0;
+    visibility: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#scrollTopBtn.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+#scrollTopBtn:hover {
+    transform: scale(1.2) rotate(360deg);
+    background: linear-gradient(135deg, #667eea, #ea6666);
+    border-color: #2ecc71;
+}
+
+/* ===== ANIMATIONS ===== */
+@keyframes pulse {
+
+    0%,
+    100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.05);
+    }
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+    #main-header h1 {
+        font-size: 2rem;
+    }
+
+    .split,
+    .gemini-input-group {
+        flex-direction: column;
+    }
+
+    #main-nav ul {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .grid {
+        grid-template-columns: 1fr;
+    }
+
+    .fun-list li {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .emoji-badge {
+        font-size: 2.5rem;
+    }
+}
